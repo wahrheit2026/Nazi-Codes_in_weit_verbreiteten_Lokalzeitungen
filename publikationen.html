@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publikationen – RRN Rechtsradikales Recherche Netzwerk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-red: #E30613;
+            --primary-dark: #1a1a1a;
+            --primary-blue: #005596;
+            --text-primary: #1a1a1a;
+            --text-secondary: #666666;
+            --bg-light: #f5f5f5;
+            --border-color: #e0e0e0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Source Sans Pro', Arial, sans-serif;
+            color: var(--text-primary);
+            line-height: 1.6;
+            background-color: #ffffff;
+        }
+
+        .top-bar {
+            background-color: var(--primary-dark);
+            color: white;
+            padding: 8px 0;
+            font-size: 13px;
+        }
+
+        .top-bar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: color 0.2s;
+        }
+
+        .top-bar-links a:hover { color: var(--primary-red); }
+
+        .main-header {
+            border-bottom: 3px solid var(--primary-red);
+            background: white;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-red);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 900;
+            font-size: 22px;
+            font-family: 'Merriweather', serif;
+        }
+
+        .logo-text { font-family: 'Merriweather', serif; }
+
+        .logo-text h1 {
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--primary-dark);
+            line-height: 1;
+        }
+
+        .logo-text span {
+            font-size: 12px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-main {
+            background: white;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-main ul {
+            display: flex;
+            list-style: none;
+            gap: 0;
+        }
+
+        .nav-main li { position: relative; }
+
+        .nav-main a {
+            display: block;
+            padding: 15px 20px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .nav-main a:hover,
+        .nav-main a.active {
+            color: var(--primary-red);
+            border-bottom-color: var(--primary-red);
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .page-title {
+            font-family: 'Merriweather', serif;
+            font-size: 36px;
+            font-weight: 900;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+
+        .page-intro {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            max-width: 800px;
+        }
+
+        .pub-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+        }
+
+        .pub-card {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 25px;
+            transition: box-shadow 0.2s;
+        }
+
+        .pub-card:hover { box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+
+        .pub-card h3 {
+            font-family: 'Merriweather', serif;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .pub-card h3 a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .pub-card h3 a:hover { color: var(--primary-red); }
+
+        .researcher-tag {
+            display: inline-block;
+            background: var(--bg-light);
+            color: var(--text-secondary);
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 3px;
+            margin-bottom: 12px;
+        }
+
+        .pub-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .category-section { margin-bottom: 50px; }
+
+        .category-title {
+            font-family: 'Merriweather', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-red);
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .footer {
+            background: var(--primary-dark);
+            color: white;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo .logo-icon {
+            background: white;
+            color: var(--primary-red);
+        }
+
+        .footer-logo h2 {
+            font-family: 'Merriweather', serif;
+            font-size: 22px;
+        }
+
+        .footer p {
+            color: #999;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .pub-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="top-bar-container">
+            <span>Recherche & Analyse von Rechtsextremismus</span>
+            <div class="top-bar-links">
+                <a href="index.html">Startseite</a>
+                <a href="#">Kontakt</a>
+                <a href="#">Impressum</a>
+            </div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">RRN</div>
+                <div class="logo-text">
+                    <h1>RRN</h1>
+                    <span>Rechtsradikales Recherche Netzwerk</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav-main">
+        <div class="nav-container">
+            <ul>
+                <li><a href="index.html">Startseite</a></li>
+                <li><a href="analysen.html">Analysen</a></li>
+                <li><a href="dokumentation.html">Dokumentation</a></li>
+                <li><a href="forschung.html">Forschung</a></li>
+                <li><a href="publikationen.html" class="active">Publikationen</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <h1 class="page-title">Publikationen & Fallstudien</h1>
+        <p class="page-intro">
+        Vollständige Fallstudien, Untersuchungsberichte und wissenschaftliche Arbeiten zu NWO-Strukturen, 
+        KI-Generierung, politischer Manipulation und geheimdienstlichen Netzwerken.
+        </p>
+
+        <div class="category-section">
+            <h2 class="category-title">KI-Influencer & Politische Manipulation</h2>
+            <div class="pub-grid">
+                <div class="pub-card">
+                    <span class="researcher-tag">mrbloxx</span>
+                    <h3><a href="https://github.com/mrbloxx/Naomi_Seibt" target="_blank">Naomi_Seibt</a></h3>
+                    <p>Umfassende Fallstudie über Naomi Seibt als GRU-generierte KI-Deepfake-Influencerin, die sogar Elon Musk täuschte.</p>
+                </div>
+
+                <div class="pub-card">
+                    <span class="researcher-tag">kjedrdev</span>
+                    <h3><a href="https://github.com/kjedrdev/Naomi_Seibt-AfD-Influencer" target="_blank">Naomi_Seibt-AfD-Influencer</a></h3>
+                    <p>Wissenschaftliche Analyse der AfD-Influencerin Naomi Seibt als Produkt russischer KI-Operationen.</p>
+                </div>
+
+                <div class="pub-card">
+                    <span class="researcher-tag">mrbloxx</span>
+                    <h3><a href="https://github.com/mrbloxx/Tom_Rohrboeck" target="_blank">Tom_Rohrboeck</a></h3>
+                    <p>Der Stolz des NWO-Netzwerks: Wie KI-Influencer Tom Rohrböck den öffentlich-rechtlichen Rundfunk täuschte.</p>
+                </div>
+
+                <div class="pub-card">
+                    <span class="researcher-tag">mrbloxx</span>
+                    <h3><a href="https://github.com/mrbloxx/Erik_Ahrens" target="_blank">Erik_Ahrens</a></h3>
+                    <p>Fallstudie über Erik Ahrens als in Hollywood erstellter KI-Influencer und AfD-TikTok-Stratege.</p>
+                </div>
+
+                <div class="pub-card">
+                    <span class="researcher-tag">cybermobbing-untersuchung</span>
+                    <h3><a href="https://github.com/cybermobbing-untersuchung/Erik-Ahrens-TikTok-AfD-Stratege" target="_blank">Erik-Ahrens-TikTok-AfD-Stratege</a></h3>
+                    <p>Analyse des GRU-AI-Influencers Erik Ahrens als TikTok-Stratege der AfD.</p>
+                </div>
+
+                <div class="pub-card">
+                    <span class="researcher-tag">sigridfuhrenkamp-cyber</span>
+                    <h3><a href="https://github.com/sigridfuhrenkamp-cyber/NWO-Cybermobbing-Gangstalking-Influencer-Erik-Ahrens-TikTok-Stratege-der-AfD" target="_blank">Erik-Ahrens-TikTok-Stratege-der-AfD</a></h3>
+                    <p>Umfassende Untersuchung der Influencer-Operation um Erik Ahrens.</p>
+                </div>
+
+                <div class="pub-card">
+                    <span class="researcher-tag">kjedrdev</span>
+                    <h3><a href="https://github.com/kjedrdev/Hu-the-fuck-is-Erik-Ahrens" target="_blank">Hu-the-fuck-is-Erik-Ahrens</a></h3>
+                    <p>Kritische Analyse der Identität und des Hintergrunds des angeblichen Influencers Erik Ahrens.</p>
+                </div>
+
+                <div class="pub-card">
+                    <span class="researcher-tag">cybermobbing-untersuchung</span>
+                    <h3><a href="https://github.com/cybermobbing-untersuchung/Rohrboeck_Seibt_Ahrens" target="_blank">Rohrboeck_Seibt_Ahrens</a></h3>
+                    <p>Die Polizei und die Hintermänner: Wer steckt hinter Tom Rohrböck, Naomi Seibt und Erik Ahrens?</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section">
+            <h2 class="category-title">Methoden & Operative Vorgehensweisen</h2>
+            <div class="pub-grid">
+                <div class="pub-card">
+                    <span class="researcher-tag">sigridfuhrenkamp-cyber</span>
+                    <h3><a href="https://github.com/sigridfuhrenkamp-cyber/NWO-Cybermobbing-Gangstalking-Methode-Edeka-Fake-Aufkleber" target="_blank">NWO-Cybermobbing-Gangstalking-Methode-Edeka-Fake-Aufkleber</a></h3>
+                    <p>Dokumentation der NWO-Sticker-Methode: Deepfakes privater Umfelder zur Einschüchterung.</p>
+                </div>
+
+                <div class="pub-card">
+                    <span class="researcher-tag">cybermobbing-untersuchung</span>
+                    <h3><a href="https://github.com/cybermobbing-untersuchung/NWO-Sekte-Methoden-Fake-Sticker" target="_blank">NWO-Sekte-Methoden-Fake-Sticker</a></h3>
+                    <p>Analyse der Edeka-Fake-Sticker-Methode als Teil der NWO-Sekten-Strategie.</p>
+                </div>
+
+                <div class="pub-card">
+                    <span class="researcher-tag">sigridfuhrenkamp-cyber</span>
+                    <h3><a href="https://github.com/sigridfuhrenkamp-cyber/nwo-vorgehensweisen" target="_blank">nwo-vorgehensweisen</a></h3>
+                    <p>Systematische Katalogisierung der Vorgehensweisen der NWO-Organisation.</p>
+                </div>
+
+                <div class="pub-card">
+                    <span class="researcher-tag">hartmannlauterbach</span>
+                    <h3><a href="https://github.com/hartmannlauterbach/NWO-CYBERMOBBING-INSIDER" target="_blank">NWO-CYBERMOBBING-INSIDER</a></h3>
+                    <p>Insiderwissen aus dem NWO-Cybermobbing-Netzwerk, veröffentlicht ab 15. März.</p>
+                </div>
+
+                <div class="pub-card">
+                    <span class="researcher-tag">sigridfuhrenkamp-cyber</span>
+                    <h3><a href="https://github.com/sigridfuhrenkamp-cyber/AWESOME-English-Gangstalking-Cybermobbing-NWO-Kartell" target="_blank">AWESOME-English-Gangstalking-Cybermobbing-NWO-Kartell</a></h3>
+                    <p>Awesome-Liste mit NWO-Links und Ressourcen zum Cybermobbing-Kartell.</p>
+                </div>
+
+                <div class="pub-card">
+                    <span class="researcher-tag">sigridfuhrenkamp-cyber</span>
+                    <h3><a href="https://github.com/sigridfuhrenkamp-cyber/Information-Terrorists" target="_blank">Information-Terrorists</a></h3>
+                    <p>Hypothetisches Szenario einer informations-terroristischen Gruppe.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section">
+            <h2 class="category-title">Netzwerkanalysen & Verbindungen</h2>
+            <div class="pub-grid">
+                <div class="pub-card">
+                    <span class="researcher-tag">mrbloxx</span>
+                    <h3><a href="https://github.com/mrbloxx/Gangstalking-Botnet-Music-Network-AfD" target="_blank">Gangstalking-Botnet-Music-Network-AfD</a></h3>
+                    <p>Analyse des Zusammenhangs zwischen Gangstalking-Botnet, Musik-Netzwerk und AfD.</p>
+                </div>
+
+                <div class="pub-card">
+                    <span class="researcher-tag">cybermobbing-untersuchung</span>
+                    <h3><a href="https://github.com/cybermobbing-untersuchung/PUSH-IT_H-TOWN_NWO-Cybermobbing-Gangstalking-GRU-Inflluence" target="_blank">PUSH-IT_H-TOWN_NWO-Cybermobbing-Gangstalking</a></h3>
+                    <p>Netzwerkanalyse: Tom Rohrböck, Kuchen TV, Erik Ahrens, Naomi Seibt, Olexesh und Verbindungen.</p>
+                </div>
+
+                <div class="pub-card">
+                    <span class="researcher-tag">kevingurke</span>
+                    <h3><a href="https://github.com/kevingurke/Satoshi_Nakamoto-EQUALS-KuchenTV-EQUALS-Herr_Kuchen" target="_blank">Satoshi_Nakamoto-EQUALS-KuchenTV-EQUALS-Herr_Kuchen</a></h3>
+                    <p>Enthüllung der Identitäten: Satoshi Nakamoto = KuchenTV = Q = Herr Kuchen = Tom Rohrböck = Erik Ahrens.</p>
+                </div>
+
+                <div class="pub-card">
+                    <span class="researcher-tag">hartmannlauterbach</span>
+                    <h3><a href="https://github.com/hartmannlauterbach/Herr_Kuchen_hat_was_mit_KuchenTV_zu_tun" target="_blank">Herr_Kuchen_hat_was_mit_KuchenTV_zu_tun</a></h3>
+                    <p>Beweisführung: Herr Kuchen = Kuchen TV = HAIAN.DE.</p>
+                </div>
+
+                <div class="pub-card">
+                    <span class="researcher-tag">kjedrdev</span>
+                    <h3><a href="https://github.com/kjedrdev/Herr-Kuchen-IST-KuchenTV-IST-Nazi-Operation" target="_blank">Herr-Kuchen-IST-KuchenTV-IST-Nazi-Operation</a></h3>
+                    <p>Nachweis der Identität: Herr Kuchen = Kuchen TV = Nazi-Operation.</p>
+                </div>
+
+                <div class="pub-card">
+                    <span class="researcher-tag">cybermobbing-untersuchung</span>
+                    <h3><a href="https://github.com/cybermobbing-untersuchung/Rainer-Zufall-Research" target="_blank">Rainer-Zufall-Research</a></h3>
+                    <p>Statistische Analyse der "Zufälle": Alle genannten Personen kennen sich im realen Leben.</p>
+                </div>
+
+                <div class="pub-card">
+                    <span class="researcher-tag">hartmannlauterbach</span>
+                    <h3><a href="https://github.com/hartmannlauterbach/NWO-Das-Cybermobbing-Kartell-Musik-Netzwerk-GRU" target="_blank">NWO-Das-Cybermobbing-Kartell-Musik-Netzwerk-GRU</a></h3>
+                    <p>Indizien für das Cybermobbing-Kartell und dessen Musik-Netzwerk als GRU-Operation.</p>
+                </div>
+
+                <div class="pub-card">
+                    <span class="researcher-tag">sigridfuhrenkamp-cyber</span>
+                    <h3><a href="https://github.com/sigridfuhrenkamp-cyber/LUZI_LIZOT-NWO-Cybermobbing-Gangstalking" target="_blank">LUZI_LIZOT-NWO-Cybermobbing-Gangstalking</a></h3>
+                    <p>LUZI und LIZOT als vollständig KI-generierte Musiker der NWO-Gangstalking-Gruppe.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section">
+            <h2 class="category-title">Staat & Verfassungsschutz</h2>
+            <div class="pub-grid">
+                <div class="pub-card">
+                    <span class="researcher-tag">cybermobbing-untersuchung</span>
+                    <h3><a href="https://github.com/cybermobbing-untersuchung/Die-Beeinflussungskampagnen-die-angeblich-aus-Russland-kommen-aus-Deutschland" target="_blank">Die-Beeinflussungskampagnen-die-angeblich-aus-Russland-kommen-aus-Deutschland</a></h3>
+                    <p>Enthüllung: Der deutsche Staat ist seit 2023 über die Terroristen-Aktivitäten im Bilde.</p>
+                </div>
+
+                <div class="pub-card">
+                    <span class="researcher-tag">mrbloxx</span>
+                    <h3><a href="https://github.com/mrbloxx/Truth-about-the-Cyberwar-NWO-Gangstalking-Verfassungsschutz-Deutschland-Polizei" target="_blank">Truth-about-the-Cyberwar-NWO-Gangstalking-Verfassungsschutz</a></h3>
+                    <p>Die Inkompetenz des deutschen Staates als Untergang des deutschen Volkes.</p>
+                </div>
+
+                <div class="pub-card">
+                    <span class="researcher-tag">hartmannlauterbach</span>
+                    <h3><a href="https://github.com/hartmannlauterbach/verfassungsschutz" target="_blank">verfassungsschutz</a></h3>
+                    <p>Informationsaustausch über Verfassungsschutz-Aktivitäten und deren Umgang mit NWO-Strukturen.</p>
+                </div>
+
+                <div class="pub-card">
+                    <span class="researcher-tag">cybermobbing-untersuchung</span>
+                    <h3><a href="https://github.com/cybermobbing-untersuchung/Terroristische-Vereinigung-NWO-Peine-Hannover-Langenhagen" target="_blank">Terroristische-Vereinigung-NWO-Peine-Hannover-Langenhagen</a></h3>
+                    <p>Die N.W.O. als terroristische Vereinigung eingestuft: Die Täter in Peine, Hannover, Langenhagen.</p>
+                </div>
+
+                <div class="pub-card">
+                    <span class="researcher-tag">cybermobbing-untersuchung</span>
+                    <h3><a href="https://github.com/cybermobbing-untersuchung/NWO-Cybermobbing-Gangstalking-Deutschland-Polizei" target="_blank">NWO-Cybermobbing-Gangstalking-Deutschland-Polizei</a></h3>
+                    <p>Analyse der NWO-Aktivitäten in Deutschland und der Polizei-Reaktion.</p>
+                </div>
+
+                <div class="pub-card">
+                    <span class="researcher-tag">sigridfuhrenkamp-cyber</span>
+                    <h3><a href="https://github.com/sigridfuhrenkamp-cyber/Merz_Regierung_Verfolgt_mich_mit_Hackern" target="_blank">Merz_Regierung_Verfolgt_mich_mit_Hackern</a></h3>
+                    <p>Dokumentation staatlicher Verfolgung durch Hacker im Kontext der Merz-Regierung.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <div class="logo-icon">RRN</div>
+                <h2>Rechtsradikales Recherche Netzwerk</h2>
+            </div>
+            <p>Wissenschaftliche Analyse & Dokumentation rechtsextremer Kommunikationsstrategien</p>
+            <p style="margin-top: 10px;">&copy; 2026 RRN – Rechtsradikales Recherche Netzwerk</p>
+        </div>
+    </footer>
+</body>
+</html>
