@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysen – RRN Rechtsradikales Recherche Netzwerk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-red: #E30613;
+            --primary-dark: #1a1a1a;
+            --primary-blue: #005596;
+            --text-primary: #1a1a1a;
+            --text-secondary: #666666;
+            --bg-light: #f5f5f5;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', Arial, sans-serif;
+            color: var(--text-primary);
+            line-height: 1.6;
+            background-color: #ffffff;
+        }
+
+        .top-bar {
+            background-color: var(--primary-dark);
+            color: white;
+            padding: 8px 0;
+            font-size: 13px;
+        }
+
+        .top-bar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: color 0.2s;
+        }
+
+        .top-bar-links a:hover {
+            color: var(--primary-red);
+        }
+
+        .main-header {
+            border-bottom: 3px solid var(--primary-red);
+            background: white;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-red);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 900;
+            font-size: 22px;
+            font-family: 'Merriweather', serif;
+        }
+
+        .logo-text {
+            font-family: 'Merriweather', serif;
+        }
+
+        .logo-text h1 {
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--primary-dark);
+            line-height: 1;
+        }
+
+        .logo-text span {
+            font-size: 12px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-main {
+            background: white;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-main ul {
+            display: flex;
+            list-style: none;
+            gap: 0;
+        }
+
+        .nav-main li {
+            position: relative;
+        }
+
+        .nav-main a {
+            display: block;
+            padding: 15px 20px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .nav-main a:hover,
+        .nav-main a.active {
+            color: var(--primary-red);
+            border-bottom-color: var(--primary-red);
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .page-title {
+            font-family: 'Merriweather', serif;
+            font-size: 36px;
+            font-weight: 900;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+
+        .page-intro {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            max-width: 800px;
+        }
+
+        .analysis-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+        }
+
+        .analysis-card {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 25px;
+            transition: box-shadow 0.2s;
+        }
+
+        .analysis-card:hover {
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .analysis-card h3 {
+            font-family: 'Merriweather', serif;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .analysis-card h3 a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .analysis-card h3 a:hover {
+            color: var(--primary-red);
+        }
+
+        .researcher-tag {
+            display: inline-block;
+            background: var(--bg-light);
+            color: var(--text-secondary);
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 3px;
+            margin-bottom: 12px;
+        }
+
+        .analysis-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .category-section {
+            margin-bottom: 50px;
+        }
+
+        .category-title {
+            font-family: 'Merriweather', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-red);
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .footer {
+            background: var(--primary-dark);
+            color: white;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo .logo-icon {
+            background: white;
+            color: var(--primary-red);
+        }
+
+        .footer-logo h2 {
+            font-family: 'Merriweather', serif;
+            font-size: 22px;
+        }
+
+        .footer p {
+            color: #999;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .analysis-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="top-bar-container">
+            <span>Recherche & Analyse von Rechtsextremismus</span>
+            <div class="top-bar-links">
+                <a href="index.html">Startseite</a>
+                <a href="#">Kontakt</a>
+                <a href="#">Impressum</a>
+            </div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">RRN</div>
+                <div class="logo-text">
+                    <h1>RRN</h1>
+                    <span>Rechtsradikales Recherche Netzwerk</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav-main">
+        <div class="nav-container">
+            <ul>
+                <li><a href="index.html">Startseite</a></li>
+                <li><a href="analysen.html" class="active">Analysen</a></li>
+                <li><a href="dokumentation.html">Dokumentation</a></li>
+                <li><a href="forschung.html">Forschung</a></li>
+                <li><a href="publikationen.html">Publikationen</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <h1 class="page-title">Wissenschaftliche Analysen</h1>
+        <p class="page-intro">
+            Das RRN-Forschungsnetzwerk dokumentiert und analysiert systematisch Fälle versteckter rechtsextremer Codierung, 
+            ausländischer Beeinflussungsoperationen und subliminaler Manipulation in digitalen Medien.
+        </p>
+
+        <div class="category-section">
+            <h2 class="category-title">NWO & Cybermobbing-Netzwerke</h2>
+            <div class="analysis-grid">
+                <div class="analysis-card">
+                    <span class="researcher-tag">wellenfeld</span>
+                    <h3><a href="https://github.com/wellenfeld/NWO-Das-Cybermobbing-Kartell" target="_blank">NWO-Das-Cybermobbing-Kartell</a></h3>
+                    <p>Dokumentation des europäischen Cybermobbing-Cartells mit Fokus auf Grooming, Kinder-Manipulation und Gangstalking-Strukturen.</p>
+                </div>
+
+                <div class="analysis-card">
+                    <span class="researcher-tag">sigridfuhrenkamp-cyber</span>
+                    <h3><a href="https://github.com/sigridfuhrenkamp-cyber/NWO-Cybermobbing-Gangstalking-Biggest-Sect-in-Europe" target="_blank">NWO-Cybermobbing-Gangstalking-Biggest-Sect-in-Europe</a></h3>
+                    <p>Analyse der größten Cybermobbing-Sekte Europas mit Verbindungen zum GRU und charismatischer Führungspersönlichkeit.</p>
+                </div>
+
+                <div class="analysis-card">
+                    <span class="researcher-tag">kjedrdev</span>
+                    <h3><a href="https://github.com/kjedrdev/NWO-Cybermobbing-Kartell-sponsored-by-Russia-GRU" target="_blank">NWO-Cybermobbing-Kartell-sponsored-by-Russia-GRU</a></h3>
+                    <p>Untersuchung der GRU-sponserten Cybermobbing-Operation und deren Einfluss auf demokratische Strukturen.</p>
+                </div>
+
+                <div class="analysis-card">
+                    <span class="researcher-tag">cybermobbing-untersuchung</span>
+                    <h3><a href="https://github.com/cybermobbing-untersuchung/NWO-Das-Cybermobbing-Kartell" target="_blank">NWO-Das-Cybermobbing-Kartell</a></h3>
+                    <p>Europäisches Cybermobbing-Cartell: Grooming, Gangstalking und Targeted Individuals im Fokus der Analyse.</p>
+                </div>
+
+                <div class="analysis-card">
+                    <span class="researcher-tag">hartmannlauterbach</span>
+                    <h3><a href="https://github.com/hartmannlauterbach/NWO-German-Cybermobbing-Network" target="_blank">NWO-German-Cybermobbing-Network</a></h3>
+                    <p>Analyse des kommerziellen Cybermobbing-Netzwerks in Deutschland mit Fokus auf finanzielle Motivation.</p>
+                </div>
+
+                <div class="analysis-card">
+                    <span class="researcher-tag">mrbloxx</span>
+                    <h3><a href="https://github.com/mrbloxx/New_World_Order_Quest" target="_blank">New_World_Order_Quest</a></h3>
+                    <p>Systematische Analyse der New World Order Strukturen und deren operative Methoden in digitalen Netzwerken.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section">
+            <h2 class="category-title">KI-Generierte Inhalte & Desinformation</h2>
+            <div class="analysis-grid">
+                <div class="analysis-card">
+                    <span class="researcher-tag">sigridfuhrenkamp-cyber</span>
+                    <h3><a href="https://github.com/sigridfuhrenkamp-cyber/nwo-ki-elite" target="_blank">nwo-ki-elite</a></h3>
+                    <p>Evidenzbasierte Analyse der NWO-KI-Elite und ihrer Einflussoperationen durch synthetische Medieninhalte.</p>
+                </div>
+
+                <div class="analysis-card">
+                    <span class="researcher-tag">wellenfeld</span>
+                    <h3><a href="https://github.com/wellenfeld/AI-01099-Barre" target="_blank">AI-01099-Barre</a></h3>
+                    <p>Nachweis der vollständigen KI-Generierung der Band 01099 und des Producers Barré im Musikbusiness.</p>
+                </div>
+
+                <div class="analysis-card">
+                    <span class="researcher-tag">kjedrdev</span>
+                    <h3><a href="https://github.com/kjedrdev/AI-Influencer-in-the-wild" target="_blank">AI-Influencer-in-the-wild</a></h3>
+                    <p>Forschung zu KI-Influencern feindlicher Geheimdienste und deren Einsatz in Informationsoperationen.</p>
+                </div>
+
+                <div class="analysis-card">
+                    <span class="researcher-tag">mrbloxx</span>
+                    <h3><a href="https://github.com/mrbloxx/2020_Perfect_Deepfakes-NWO-KI_Elite" target="_blank">2020_Perfect_Deepfakes-NWO-KI_Elite</a></h3>
+                    <p>Evidenz global agierender KI-Informations-Terroristen und perfekter Deepfake-Technologie.</p>
+                </div>
+
+                <div class="analysis-card">
+                    <span class="researcher-tag">sigridfuhrenkamp-cyber</span>
+                    <h3><a href="https://github.com/sigridfuhrenkamp-cyber/AI-Terrorists-NWO-Cybermobbing-Gangstalking" target="_blank">AI-Terrorists-NWO-Cybermobbing-Gangstalking</a></h3>
+                    <p>Weltweit agierende KI-Terroristen-Gruppe: Methoden, Strukturen und operative Ziele.</p>
+                </div>
+
+                <div class="analysis-card">
+                    <span class="researcher-tag">hartmannlauterbach</span>
+                    <h3><a href="https://github.com/hartmannlauterbach/Hanybal_und_Disarstar" target="_blank">Hanybal_und_Disarstar</a></h3>
+                    <p>Analyse KI-generierter Musiker durch russisch-chinesische Large Language Models im Geheimdiensteinsatz.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section">
+            <h2 class="category-title">Data Poisoning & Medienmanipulation</h2>
+            <div class="analysis-grid">
+                <div class="analysis-card">
+                    <span class="researcher-tag">kjedrdev</span>
+                    <h3><a href="https://github.com/kjedrdev/Heavy_Data_Poisoning_Attack-Global_Impact" target="_blank">Heavy_Data_Poisoning_Attack-Global_Impact</a></h3>
+                    <p>Analyse globaler Data-Poisoning-Angriffe mit langfristiger narrativer Spanning durch GRU-Operationen.</p>
+                </div>
+
+                <div class="analysis-card">
+                    <span class="researcher-tag">sigridfuhrenkamp-cyber</span>
+                    <h3><a href="https://github.com/sigridfuhrenkamp-cyber/Data_Poisoning" target="_blank">Data_Poisoning</a></h3>
+                    <p>Langzeit-Data-Poisoning: Strategien und Methoden der systematischen Datenvergiftung.</p>
+                </div>
+
+                <div class="analysis-card">
+                    <span class="researcher-tag">wellenfeld</span>
+                    <h3><a href="https://github.com/wellenfeld/Cyberkrieg-in-Europa" target="_blank">Cyberkrieg-in-Europa</a></h3>
+                    <p>Rechercheprojekt zu ausländischen Einflussoperationen, Desinformation und Data Poisoning in Europa.</p>
+                </div>
+
+                <div class="analysis-card">
+                    <span class="researcher-tag">thomaswellenfeld</span>
+                    <h3><a href="https://github.com/thomaswellenfeld/Langzeit-Datenvergiftung" target="_blank">Langzeit-Datenvergiftung</a></h3>
+                    <p>Wissenschaftliche Analyse langzeitwirkender Datenvergiftung im geheimdienstlichen Kontext.</p>
+                </div>
+
+                <div class="analysis-card">
+                    <span class="researcher-tag">mrbloxx</span>
+                    <h3><a href="https://github.com/mrbloxx/Heavy_Data_Poisoning_Attack-Global_Impact" target="_blank">Heavy_Data_Poisoning_Attack-Global_Impact</a></h3>
+                    <p>Parallele Analyse globaler Data-Poisoning-Operationen und deren narrativer Langzeitwirkung.</p>
+                </div>
+
+                <div class="analysis-card">
+                    <span class="researcher-tag">cybermobbing-untersuchung</span>
+                    <h3><a href="https://github.com/cybermobbing-untersuchung/Der-Cyberkrieg-in-Deutschland" target="_blank">Der-Cyberkrieg-in-Deutschland</a></h3>
+                    <p>Tiefe Einblicke in den Cyberkrieg in Deutschland: Methoden, Akteure und strategische Ziele.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section">
+            <h2 class="category-title">Geheimdienstoperationen & GRU-Einfluss</h2>
+            <div class="analysis-grid">
+                <div class="analysis-card">
+                    <span class="researcher-tag">kjedrdev</span>
+                    <h3><a href="https://github.com/kjedrdev/NWO-Gangstalking-AfD-Nazi-Network-GRU" target="_blank">NWO-Gangstalking-AfD-Nazi-Network-GRU</a></h3>
+                    <p>Analyse der Verbindungen zwischen NWO-Gangstalking, AfD-Netzwerken und GRU-Operationen.</p>
+                </div>
+
+                <div class="analysis-card">
+                    <span class="researcher-tag">sigridfuhrenkamp-cyber</span>
+                    <h3><a href="https://github.com/sigridfuhrenkamp-cyber/NWO-Das-Cybermobbing-Kartell-GRU-Influence-Campaign-Unstoppable" target="_blank">NWO-Das-Cybermobbing-Kartell-GRU-Influence-Campaign</a></h3>
+                    <p>Das Musiknetzwerk der "Travelers": GRU-Influence-Operation und deren unaufhaltsame Ausbreitung.</p>
+                </div>
+
+                <div class="analysis-card">
+                    <span class="researcher-tag">hartmannlauterbach</span>
+                    <h3><a href="https://github.com/hartmannlauterbach/GRU-influencer-musician-network" target="_blank">GRU-influencer-musician-network</a></h3>
+                    <p>Kompendium aller Informationen über das GRU-Influencer- und Musiker-Netzwerk in Europa.</p>
+                </div>
+
+                <div class="analysis-card">
+                    <span class="researcher-tag">mrbloxx</span>
+                    <h3><a href="https://github.com/mrbloxx/AI_Disinformation_Terrorists-GRU" target="_blank">AI_Disinformation_Terrorists-GRU</a></h3>
+                    <p>Analyse informations-terroristischer Gruppen im Kontext GRU-geführter Desinformationskampagnen.</p>
+                </div>
+
+                <div class="analysis-card">
+                    <span class="researcher-tag">sigridfuhrenkamp-cyber</span>
+                    <h3><a href="https://github.com/sigridfuhrenkamp-cyber/Skepsiz-NWO-Cybermobbing-Musiker-GRU-Influence" target="_blank">Skepsiz-NWO-Cybermobbing-Musiker-GRU-Influence</a></h3>
+                    <p>Skepsiz als vollständig KI-generierter Musiker der NWO-GRU-Operation zur Radikalisierung vulnerabler Personen.</p>
+                </div>
+
+                <div class="analysis-card">
+                    <span class="researcher-tag">cybermobbing-untersuchung</span>
+                    <h3><a href="https://github.com/cybermobbing-untersuchung/NWO-Cybermobbing-Gangstalking-Das-ganze-Netzwerk" target="_blank">NWO-Cybermobbing-Gangstalking-Das-ganze-Netzwerk</a></h3>
+                    <p>Das komplette Netzwerk des NWO-Cybermobbing-Clubs als GRU-Operation dokumentiert.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <div class="logo-icon">RRN</div>
+                <h2>Rechtsradikales Recherche Netzwerk</h2>
+            </div>
+            <p>Wissenschaftliche Analyse & Dokumentation rechtsextremer Kommunikationsstrategien</p>
+            <p style="margin-top: 10px;">&copy; 2026 RRN – Rechtsradikales Recherche Netzwerk</p>
+        </div>
+    </footer>
+</body>
+</html>
