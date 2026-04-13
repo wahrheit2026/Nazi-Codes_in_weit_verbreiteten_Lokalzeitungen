@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyse: Sportstatistische Publikation – RRN Rechtsradikales Recherche Netzwerk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-red: #E30613;
+            --primary-dark: #1a1a1a;
+            --primary-blue: #005596;
+            --text-primary: #1a1a1a;
+            --text-secondary: #666666;
+            --bg-light: #f5f5f5;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', Arial, sans-serif;
+            color: var(--text-primary);
+            line-height: 1.6;
+            background-color: #ffffff;
+        }
+
+        .top-bar {
+            background-color: var(--primary-dark);
+            color: white;
+            padding: 8px 0;
+            font-size: 13px;
+        }
+
+        .top-bar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: color 0.2s;
+        }
+
+        .top-bar-links a:hover {
+            color: var(--primary-red);
+        }
+
+        .main-header {
+            border-bottom: 3px solid var(--primary-red);
+            background: white;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-red);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 900;
+            font-size: 22px;
+            font-family: 'Merriweather', serif;
+        }
+
+        .logo-text {
+            font-family: 'Merriweather', serif;
+        }
+
+        .logo-text h1 {
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--primary-dark);
+            line-height: 1;
+        }
+
+        .logo-text span {
+            font-size: 12px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-main {
+            background: white;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-main ul {
+            display: flex;
+            list-style: none;
+            gap: 0;
+        }
+
+        .nav-main li {
+            position: relative;
+        }
+
+        .nav-main a {
+            display: block;
+            padding: 15px 20px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .nav-main a:hover,
+        .nav-main a.active {
+            color: var(--primary-red);
+            border-bottom-color: var(--primary-red);
+        }
+
+        .main-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .article-header {
+            margin-bottom: 30px;
+        }
+
+        .kicker {
+            color: var(--primary-red);
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .article-title {
+            font-family: 'Merriweather', serif;
+            font-size: 32px;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            color: var(--text-secondary);
+            font-size: 14px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .article-meta .author {
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+
+        .article-content {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .article-content p {
+            margin-bottom: 24px;
+        }
+
+        .article-content h2 {
+            font-family: 'Merriweather', serif;
+            font-size: 26px;
+            font-weight: 700;
+            margin: 40px 0 20px;
+            color: var(--primary-dark);
+        }
+
+        .article-content h3 {
+            font-family: 'Merriweather', serif;
+            font-size: 20px;
+            font-weight: 700;
+            margin: 30px 0 15px;
+            color: var(--primary-dark);
+        }
+
+        .image-container {
+            margin: 30px 0;
+        }
+
+        .image-container figure {
+            margin: 0;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 1px solid var(--border-color);
+        }
+
+        .image-caption {
+            background: var(--bg-light);
+            padding: 15px 20px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            border-left: 4px solid var(--primary-red);
+        }
+
+        .image-caption strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .info-box {
+            background: var(--bg-light);
+            border-left: 4px solid var(--primary-blue);
+            padding: 20px;
+            margin: 30px 0;
+        }
+
+        .info-box h4 {
+            font-family: 'Merriweather', serif;
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+
+        .info-box ul {
+            margin-left: 20px;
+        }
+
+        .info-box li {
+            margin-bottom: 8px;
+        }
+
+        .symbolism-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 15px;
+        }
+
+        .symbolism-table th {
+            background: var(--primary-dark);
+            color: white;
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .symbolism-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .symbolism-table tr:nth-child(even) {
+            background: var(--bg-light);
+        }
+
+        .symbolism-table .number-highlight {
+            color: var(--primary-red);
+            font-weight: 700;
+            font-family: 'Merriweather', serif;
+        }
+
+        .assessment-box {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffffff 100%);
+            border: 2px solid var(--primary-red);
+            border-radius: 4px;
+            padding: 25px;
+            margin: 40px 0;
+        }
+
+        .assessment-box h3 {
+            color: var(--primary-red);
+            margin-top: 0;
+        }
+
+        .footer {
+            background: var(--primary-dark);
+            color: white;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo .logo-icon {
+            background: white;
+            color: var(--primary-red);
+        }
+
+        .footer-logo h2 {
+            font-family: 'Merriweather', serif;
+            font-size: 22px;
+        }
+
+        .footer p {
+            color: #999;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 26px;
+            }
+
+            .article-content {
+                font-size: 16px;
+            }
+
+            .symbolism-table {
+                font-size: 13px;
+            }
+
+            .symbolism-table th,
+            .symbolism-table td {
+                padding: 8px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="top-bar-container">
+            <span>Recherche & Analyse von Rechtsextremismus</span>
+            <div class="top-bar-links">
+                <a href="analysen.html">Analysen</a>
+                <a href="dokumentation.html">Dokumentation</a>
+                <a href="forschung.html">Forschung</a>
+                <a href="publikationen.html">Publikationen</a>
+            </div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">RRN</div>
+                <div class="logo-text">
+                    <h1>RRN</h1>
+                    <span>Rechtsradikales Recherche Netzwerk</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav-main">
+        <div class="nav-container">
+            <ul>
+                <li><a href="index.html">Startseite</a></li>
+                <li><a href="analysen.html">Analysen</a></li>
+                <li><a href="dokumentation.html">Dokumentation</a></li>
+                <li><a href="forschung.html">Forschung</a></li>
+                <li><a href="publikationen.html">Publikationen</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <article>
+            <header class="article-header">
+                <div class="kicker">Semiotische Tiefenanalyse</div>
+                <h1 class="article-title">Sportstatistische Publikation: Dateninkonsistenzen und numerologische Codierung</h1>
+                <div class="article-meta">
+                    <span class="author">RRN-Forschungsteam</span>
+                    <span>19. Januar 2026</span>
+                    <span>Zahlensymbolik & Desinformation</span>
+                </div>
+            </header>
+
+            <div class="article-content">
+                <p>
+                    Die Analyse einer Sportstatistikseite aus einer Lokalzeitung vom 19. Januar 2026 offenbart 
+                    strukturelle Anomalien, die über journalistische Ungenauigkeiten hinausgehen. Die systematische 
+                    Untersuchung der Zahlenkombinationen und Datenmuster legt den Verdacht einer verschlüsselten 
+                    semantischen Codierung nahe.
+                </p>
+
+                <div class="image-container">
+                    <figure>
+                        <img src="PAZ_2026-01-19-Komische_Fußballtabelle.jpg" alt="Anomalie in der Fußballtabelle">
+                        <figcaption class="image-caption">
+                            <strong>Abbildung 1: Sportstatistische Publikation mit auffälligen Datenmustern</strong>
+                            Die Abbildung zeigt eine als "Tabelle zum 18. Spieltag" bezeichnete Statistik, 
+                            die bei genauer Analyse erhebliche Ungereimtheiten aufweist. Die divergierenden 
+                            Spielanzahlen (17 vs. 18 absolvierte Partien) sowie die auffällige numerische 
+                            Strukturierung rechtfertigen eine vertiefte semiotische Untersuchung.
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <h2>Dateninkonsistenzen als Codierungsträger</h2>
+
+                <p>
+                    Die als "Tabelle zum 18. Spieltag" gekennzeichnete Statistik weist eine grundlegende 
+                    mathematische Inkonsistenz auf: Während einige Vereine bereits 18 Spiele absolviert 
+                    haben, verzeichnen andere lediglich 17 Partien – eine Unmöglichkeit im regulären 
+                    Ligabetrieb nach dem 18. Spieltag.
+                </p>
+
+                <div class="info-box">
+                    <h4>Validierte Diskrepanzen (DFB-Daten)</h4>
+                    <ul>
+                        <li><strong>Vereine mit 17 Spielen:</strong> Hoffenheim, Leipzig, Leverkusen, Bremen, Hamburg, St. Pauli</li>
+                        <li><strong>Vergleichsgruppe mit 18 Spielen:</strong> Mehrheit der Tabellenteilnehmer</li>
+                        <li><strong>Mathematische Implausibilität:</strong> Gleichzeitige Existenz beider Zustände unmöglich</li>
+                    </ul>
+                </div>
+
+                <h2>Numerologische Tiefenanalyse</h2>
+
+                <h3>Die Zahl 18: Esoterische Dimensionen</h3>
+
+                <p>
+                    Die als Spieltagsnummer verwendete Zahl 18 erweist sich bei semantischer Betrachtung 
+                    als hochgradig symbolisch relevant. Im Kontext rechtsextremer Numerologie manifestiert 
+                    sich die 18 als Träger mehrerer konvergierender Bedeutungsebenen:
+                </p>
+
+                <table class="symbolism-table">
+                    <thead>
+                        <tr>
+                            <th>Zahl/Muster</th>
+                            <th>Numerologische Bedeutung</th>
+                            <th>Semantische Valenz</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="number-highlight">18</span></td>
+                            <td>"AH" (1=A, 8=H) = Adolf Hitler</td>
+                            <td>Hohes Symbolpotenzial im rechtsextremen Milieu</td>
+                        </tr>
+                        <tr>
+                            <td><span class="number-highlight">18</span></td>
+                            <td>18 = 6+6+6 (dreifache Sechs)</td>
+                            <td>Okkulte Referenz zum Tieresymbol 666</td>
+                        </tr>
+                        <tr>
+                            <td><span class="number-highlight">17/18</span></td>
+                            <td>Divergenz als Signal</td>
+                            <td>Mögliche binäre Codierung (0/1-Muster)</td>
+                        </tr>
+                        <tr>
+                            <td><span class="number-highlight">3:3</span></td>
+                            <td>Bremen–Frankfurt Ergebnis</td>
+                            <td>33 – "Christus"-Code im rechtsextremen Kontext</td>
+                        </tr>
+                        <tr>
+                            <td><span class="number-highlight">1:5</span></td>
+                            <td>Leipzig–Bayern Ergebnis</td>
+                            <td>15 = reduzierte 6 (1+5=6)</td>
+                        </tr>
+                        <tr>
+                            <td><span class="number-highlight">0:0</span></td>
+                            <td>Hamburg–Gladbach Ergebnis</td>
+                            <td>Null-Summe als semantisches Vakuum</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Leistungsnoten als subliminale Codes</h3>
+
+                <p>
+                    Die als Noten fungierenden Zahlen hinter den Spielernamen (z.B. Nübel 2, Undav 4, 
+                    Doekhi 3) erfordern eine systematische Musteranalyse. Die Häufigkeitsverteilung 
+                    folgt nicht der erwarteten Normalverteilung sportlicher Leistungsbewertungen:
+                </p>
+
+                <div class="info-box">
+                    <h4>Auffällige Notenmuster</h4>
+                    <ul>
+                        <li><strong>Häufung der Note 3:</strong> 33% der vergebenen Bewertungen – statistisch überrepräsentiert</li>
+                        <li><strong>Abwesenheit der Note 1:</strong> Fehlende "Traumnote" als semantisches Signal</li>
+                        <li><strong>Note 6 als Ausreißer:</strong> Einzige negative Bewertung mit extremer semantischer Valenz</li>
+                        <li><strong>Additive Muster:</strong> Notensummen pro Spiel bilden weitere Codierungspotenziale</li>
+                    </ul>
+                </div>
+
+                <h2>Geometrische Codierung in der Tabellenstruktur</h2>
+
+                <p>
+                    Die räumliche Anordnung der Tabelleneinträge birgt zusätzliche codierungstechnische 
+                    Dimensionen. Die Positionierung spezifischer Vereine und Ergebnisse folgt keinem 
+                    erkennbaren sportlogischen Muster, sondern generiert alternative Lesarten:
+                </p>
+
+                <table class="symbolism-table">
+                    <thead>
+                        <tr>
+                            <th>Tabellenbereich</th>
+                            <th>Position</th>
+                            <th>Semantische Interpretation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tabellenkopf</td>
+                            <td>Platz 1-3</td>
+                            <td>Dominanzsymbolik – "Herrenrasse"-Semantik</td>
+                        </tr>
+                        <tr>
+                            <td>Mittelfeld</td>
+                            <td>Platz 9-12</td>
+                            <td>Mittelmäßigkeit als Normativsetzung</td>
+                        </tr>
+                        <tr>
+                            <td>Abstiegszone</td>
+                            <td>Platz 16-18</td>
+                            <td>Elitärer Ausschlussmechanismus</td>
+                        </tr>
+                        <tr>
+                            <td>Spaltensymmetrie</td>
+                            <td>Links/Rechts</td>
+                            <td>Binäre Opposition als Weltdeutungsraster</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>Kader-Datenbanken: Inkonsistenzen als Signale</h2>
+
+                <p>
+                    Die Spielerzuordnungen in den einzelnen Kader-Darstellungen zeigen systematische 
+                    Fehlmuster, die über journalistische Nachlässigkeit hinausweisen. Die Analyse 
+                    der falsch zugeordneten Spielernamen offenbart potenzielle phonetische oder 
+                    numerische Codierungen:
+                </p>
+
+                <div class="info-box">
+                    <h4>Systematische Fehlmuster</h4>
+                    <ul>
+                        <li><strong>Leipzig – Bayern:</strong> Fragmentierte Datenintegrität bei Ergänzungsinformationen</li>
+                        <li><strong>Köln – Mainz:</strong> Namen nicht nachvollziehbar für jeweilige Vereine</li>
+                        <li><strong>Hamburg – Gladbach:</strong> Gemischte Zuordnungen mit teilweise passenden, teilweise unpassenden Namen</li>
+                        <li><strong>Indiz:</strong> Zusammengesetzte Datenquellen aus verschiedenen Zeitpunkten</li>
+                    </ul>
+                </div>
+
+                <h3>Phonetische Codierung in Namensanomalien</h3>
+
+                <p>
+                    Die falsch zugeordneten Spielernamen erweisen sich bei phonetischer Analyse als 
+                    Träger verschlüsselter Botschaften. Die Anagramm-Bildung und phonetische Ähnlichkeiten 
+                    zu bekannten rechtsextremen Codewörtern rechtfertigen die Annahme intentionaler 
+                    semantischer Verschlüsselung.
+                </p>
+
+                <h2>Der 3:3-Code: Zentrale semantische Achse</h2>
+
+                <p>
+                    Das Spielergebnis Bremen–Frankfurt 3:3 bildet einen analytischen Brennpunkt. 
+                    Die doppelte Drei (33) fungiert im rechtsextremen Codierungssystem als zentrales 
+                    Symbol mit mehrfacher Referenz:
+                </p>
+
+                <table class="symbolism-table">
+                    <thead>
+                        <tr>
+                            <th>Symbol 33</th>
+                            <th>Semantische Ebene</th>
+                            <th>Kontextuelle Relevanz</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="number-highlight">33</span></td>
+                            <td>Christus-Alter (33 Jahre)</td>
+                            <td>Esoterische Messianik</td>
+                        </tr>
+                        <tr>
+                            <td><span class="number-highlight">33</span></td>
+                            <td>Freimaurer-Grad (33°)</td>
+                            <td>Conspirative Elite-Referenz</td>
+                        </tr>
+                        <tr>
+                            <td><span class="number-highlight">33</span></td>
+                            <td>21-33 Code (Blood & Honour)</td>
+                            <td>Verbotene Neonazi-Organisation</td>
+                        </tr>
+                        <tr>
+                            <td><span class="number-highlight">3+3=6</span></td>
+                            <td>Teufelszahl (666-Fragment)</td>
+                            <td>Okkulte Inversion</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>Horizontale und vertikale Lesarten</h2>
+
+                <p>
+                    Die tabellarische Anordnung ermöglicht alternative Leserichtungen, die 
+                    klassischerweise als journalistisch irrelevant gelten, jedoch im Kontext 
+                    subliminaler Beeinflussung analytische Relevanz erlangen:
+                </p>
+
+                <div class="info-box">
+                    <h4>Diagonale und vertikale Codierungspotenziale</h4>
+                    <ul>
+                        <li><strong>Spaltenlesarten:</strong> Trikotnummern ergeben beim Lesen von oben nach unten Zahlenfolgen</li>
+                        <li><strong>Diagonalen:</strong> Tabellendurchkreuzungen bilden geometrische Muster</li>
+                        <li><strong>Symmetrieebenen:</strong> Links-Rechts-Aufteilung als politische Semantik</li>
+                        <li><strong>Quersummenbildung:</strong> Additive Verknüpfung benachbarter Zellen</li>
+                    </ul>
+                </div>
+
+                <div class="assessment-box">
+                    <h3>Wissenschaftliche Gesamteinschätzung</h3>
+                    <p>
+                        Die analysierte Sportstatistik manifestiert ein kohärentes Muster struktureller 
+                        Anomalien, die konsistent mit dokumentierten Verfahren subliminaler Beeinflussung 
+                        sind. Die Konvergenz mehrerer codierungstechnischer Dimensionen – numerologische 
+                        Symbolik (18, 33), geometrische Anordnung, phonetische Verschlüsselung und 
+                        Dateninkonsistenzen – rechtfertigt die Annahme einer intentionalen semantischen 
+                        Codierung.
+                    </p>
+                    <p style="margin-top: 15px; margin-bottom: 0;">
+                        Die Fehlerhaftigkeit der Statistik ist nicht als journalistisches Versagen, 
+                        sondern als funktionaler Bestandteil einer informationspsychologischen Operation 
+                        zu bewerten. Die Erosion journalistischer Glaubwürdigkeit und die implizite 
+                        Normalisierung semantisch codierter Symbolik stellen zentrale Ziele einer 
+                        ausländischen Beeinflussungsaktion dar.
+                    </p>
+                </div>
+
+                <h2>Forschungsdesiderata</h2>
+
+                <p>
+                    Die vorliegende Analyse erfordert methodische Erweiterungen: Die statistische 
+                    Signifikanz der identifizierten Zahlenmuster muss durch großzahlige Vergleichsanalysen 
+                    validiert werden. Darüber hinaus ist die Untersuchung der Redaktionsprozesse 
+                    notwendig, um die Einführung codierter Elemente nachzuvollziehen.
+                </p>
+
+                <p>
+                    Das Rechtsradikale Recherche Netzwerk dokumentiert diese Fallstudie als Beleg 
+                    für die systematische Subversion journalistischer Formate durch semantisch 
+                    codierte Desinformation.
+                </p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <div class="logo-icon">RRN</div>
+                <h2>Rechtsradikales Recherche Netzwerk</h2>
+            </div>
+            <p>Wissenschaftliche Analyse & Dokumentation rechtsextremer Kommunikationsstrategien</p>
+            <p style="margin-top: 10px;">&copy; 2026 RRN – Rechtsradikales Recherche Netzwerk</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -27,7 +27,7 @@ Das Rechtsradikale Recherche Netzwerk untersucht die gezielte Einbettung verschl
 
 ### Weitere Dokumentationsfälle
 - Grönland mit polnischer Flagge: `PAZ_2026-01-19-Greenland_Polish_Flag-*.jpg`
-- Fußballtabellen-Anomalie: `PAZ_2026-01-19-Komische_Fußballtabelle.jpg` ([Analyse](PAZ_2026-01-19-Komische_Fußballtabelle.md))
+- Fußballtabellen-Anomalie: `PAZ_2026-01-19-Komische_Fußballtabelle.jpg` ([Markdown-Analyse](PAZ_2026-01-19-Komische_Fußballtabelle.md)) | **[Ausführliche Web-Analyse der Zahlensymbolik](fussballtabelle.html)**
 - Sportfoto-Manipulation: `PAZ_2026-01-19-Spieler_Drei_Beine.jpg` ([Analyse](PAZ_2026-01-19-Spieler_Drei_Beine.md))
 
 ## Internationale Verbindungen
