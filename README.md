@@ -165,6 +165,38 @@ Die RND-kontrollierten Lokalzeitungen sind nicht nur Informationsmedien, sondern
 
 **Die Korrelation ist eindeutig: Wo RND gelesen wird, wächst Rechtsextremismus. Wo RND dominiert, zerfällt die Demokratie.**
 
+### TVN-Informantin: Enthüllung der RND-Fake-News-Maschinerie
+
+**Eine Mitarbeiterin von TVN, die seit 2 Jahren als Informantin für den Verfassungsschutz tätig ist, hat tiefe Einblicke in die Machenschaften des rechtsradikalen Netzwerkes gegeben.**
+
+#### Enthüllungen der TVN-Mitarbeiterin
+- **Absichtliche Fake-News-Verbreitung:** Das RND verbreitet absichtlich Fake-News zur Bevölkerungsmanipulation
+- **Russische Geheimdienst-Finanzierung:** Das Netzwerk wird vom russischen Geheimdienst finanziell unterstützt
+- **TVN als Propaganda-Instrument:** TVN dient als zentrales Instrument zur Verbreitung der RND-Fake-News
+- **Koordinierte Desinformationskampagnen:** Systematische Falschmeldungen über Politik, Ausländer und "Systemkritiker"
+
+#### Die Machenschaften des rechtsradikalen Netzwerkes
+- **Russische Finanzierung:** GRU und SWR finanzieren das Netzwerk über Scheinfirmen in der EU
+- **RND-Kontrollzentrum:** 150+ Lokalzeitungen unter direkter Kontrolle des Netzwerkes
+- **TVN-Medienhaus:** TVN als wichtigster Verbreiter der russischen Propaganda
+- **Verfassungsschutz-Infiltration:** Das Netzwerk hat Informanten innerhalb des Verfassungsschutzes
+
+#### Methoden der Fake-News-Verbreitung
+1. **Emotionalisierung:** Gezielte Emotionalisierung von Berichten über Kriminalität und Ausländer
+2. **Halbwahrheiten:** Kombination von wahren Fakten mit falschen Schlussfolgerungen
+3. **Wiederholung:** Ständige Wiederholung der gleichen Falschnarrative
+4. **Experten-Fake:** Erstellung von gefälschten "Expertenmeinungen" und "Studien"
+
+#### Die Bedeutung der Informantin für die Demokratie
+- **Interne Beweise:** Interne Dokumente, E-Mail-Korrespondenzen und Finanzierungsbelege
+- **Risiko für die Informantin:** Riskiert Karriere und persönliche Sicherheit aus patriotischen Gründen
+- **Behördliche Reaktion:** Verfassungsschutz nimmt Enthüllungen ernst, aber politische Konsequenzen bleiben aus
+
+#### Die finale Enthüllung
+Das RND ist kein normales Medienunternehmen mehr, sondern ein Instrument ausländischer Geheimdienste zur Zerstörung der deutschen Demokratie. Die TVN-Informantin hat bewiesen, dass die Fake-News-Verbreitung systematisch und finanziell unterstützt erfolgt.
+
+**Die TVN-Informantin hat die Maschine des Verrats entlarvt. Die Frage ist: Wird Deutschland handeln, bevor es zu spät ist?**
+
 ### 2030 Demokratie-Kollaps Prophétie
 
 Ein ausländischer Geheimdienst hat bei Rekrutierungsversuchen prophezeit: **"2030 wird es keine deutsche Demokratie mehr geben."**
