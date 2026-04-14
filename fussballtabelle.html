@@ -12,381 +12,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>">
-        :root {
-            --primary-red: #E30613;
-            --primary-dark: #1a1a1a;
-            --primary-blue: #005596;
-            --text-primary: #1a1a1a;
-            --text-secondary: #666666;
-            --bg-light: #f5f5f5;
-            --border-color: #e0e0e0;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Source Sans Pro', Arial, sans-serif;
-            color: var(--text-primary);
-            line-height: 1.6;
-            background-color: #ffffff;
-        }
-
-        .top-bar {
-            background-color: var(--primary-dark);
-            color: white;
-            padding: 8px 0;
-            font-size: 13px;
-        }
-
-        .top-bar-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .top-bar-links a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-            transition: color 0.2s;
-        }
-
-        .top-bar-links a:hover {
-            color: var(--primary-red);
-        }
-
-        .main-header {
-            border-bottom: 3px solid var(--primary-red);
-            background: white;
-        }
-
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .logo-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--primary-red);
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 900;
-            font-size: 22px;
-            font-family: 'Merriweather', serif;
-        }
-
-        .logo-text {
-            font-family: 'Merriweather', serif;
-        }
-
-        .logo-text h1 {
-            font-size: 28px;
-            font-weight: 900;
-            color: var(--primary-dark);
-            line-height: 1;
-        }
-
-        .logo-text span {
-            font-size: 12px;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .nav-main {
-            background: white;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .nav-main ul {
-            display: flex;
-            list-style: none;
-            gap: 0;
-        }
-
-        .nav-main li {
-            position: relative;
-        }
-
-        .nav-main a {
-            display: block;
-            padding: 15px 20px;
-            color: var(--text-primary);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 15px;
-            border-bottom: 3px solid transparent;
-            transition: all 0.2s;
-        }
-
-        .nav-main a:hover,
-        .nav-main a.active {
-            color: var(--primary-red);
-            border-bottom-color: var(--primary-red);
-        }
-
-        .main-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        .article-header {
-            margin-bottom: 30px;
-        }
-
-        .kicker {
-            color: var(--primary-red);
-            font-weight: 700;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
-        }
-
-        .article-title {
-            font-family: 'Merriweather', serif;
-            font-size: 32px;
-            font-weight: 900;
-            line-height: 1.2;
-            margin-bottom: 20px;
-            color: var(--primary-dark);
-        }
-
-        .article-meta {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            color: var(--text-secondary);
-            font-size: 14px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .article-meta .author {
-            color: var(--primary-blue);
-            font-weight: 600;
-        }
-
-        .article-content {
-            font-size: 18px;
-            line-height: 1.8;
-        }
-
-        .article-content p {
-            margin-bottom: 24px;
-        }
-
-        .article-content h2 {
-            font-family: 'Merriweather', serif;
-            font-size: 26px;
-            font-weight: 700;
-            margin: 40px 0 20px;
-            color: var(--primary-dark);
-        }
-
-        .article-content h3 {
-            font-family: 'Merriweather', serif;
-            font-size: 20px;
-            font-weight: 700;
-            margin: 30px 0 15px;
-            color: var(--primary-dark);
-        }
-
-        .image-container {
-            margin: 30px 0;
-        }
-
-        .image-container figure {
-            margin: 0;
-        }
-
-        .image-container img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border: 1px solid var(--border-color);
-        }
-
-        .image-caption {
-            background: var(--bg-light);
-            padding: 15px 20px;
-            font-size: 14px;
-            color: var(--text-secondary);
-            border-left: 4px solid var(--primary-red);
-        }
-
-        .image-caption strong {
-            color: var(--text-primary);
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .info-box {
-            background: var(--bg-light);
-            border-left: 4px solid var(--primary-blue);
-            padding: 20px;
-            margin: 30px 0;
-        }
-
-        .info-box h4 {
-            font-family: 'Merriweather', serif;
-            font-size: 18px;
-            margin-bottom: 15px;
-            color: var(--primary-dark);
-        }
-
-        .info-box ul {
-            margin-left: 20px;
-        }
-
-        .info-box li {
-            margin-bottom: 8px;
-        }
-
-        .symbolism-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            font-size: 15px;
-        }
-
-        .symbolism-table th {
-            background: var(--primary-dark);
-            color: white;
-            padding: 12px 15px;
-            text-align: left;
-            font-weight: 600;
-        }
-
-        .symbolism-table td {
-            padding: 12px 15px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .symbolism-table tr:nth-child(even) {
-            background: var(--bg-light);
-        }
-
-        .symbolism-table .number-highlight {
-            color: var(--primary-red);
-            font-weight: 700;
-            font-family: 'Merriweather', serif;
-        }
-
-        .assessment-box {
-            background: linear-gradient(135deg, #fff5f5 0%, #ffffff 100%);
-            border: 2px solid var(--primary-red);
-            border-radius: 4px;
-            padding: 25px;
-            margin: 40px 0;
-        }
-
-        .assessment-box h3 {
-            color: var(--primary-red);
-            margin-top: 0;
-        }
-
-        .footer {
-            background: var(--primary-dark);
-            color: white;
-            padding: 40px 0;
-            margin-top: 60px;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            text-align: center;
-        }
-
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .footer-logo .logo-icon {
-            background: white;
-            color: var(--primary-red);
-        }
-
-        .footer-logo h2 {
-            font-family: 'Merriweather', serif;
-            font-size: 22px;
-        }
-
-        .footer p {
-            color: #999;
-            font-size: 14px;
-        }
-
-        @media (max-width: 768px) {
-            .article-title {
-                font-size: 26px;
-            }
-
-            .article-content {
-                font-size: 16px;
-            }
-
-            .symbolism-table {
-                font-size: 13px;
-            }
-
-            .symbolism-table th,
-            .symbolism-table td {
-                padding: 8px 10px;
-            }
-        }
-    </style>
 </head>
-<body>
+<body class="fade-in-up">
     <div class="top-bar">
-        <div class="top-bar-container">
-            <span>Recherche & Analyse von Rechtsextremismus</span>
+        <div class="container top-bar-container">
+            <span>🔍 Recherche & Analyse von Rechtsextremismus</span>
             <div class="top-bar-links">
-                <a href="fussballtabelle.html">Fußballtabelle</a>
-                <a href="analysen.html">Analysen</a>
-                <a href="dokumentation.html">Dokumentation</a>
-                <a href="forschung.html">Forschung</a>
-                <a href="publikationen.html">Publikationen</a>
+                <a href="fussballtabelle.html">⚽ Fußballtabelle</a>
+                <a href="analysen.html">📊 Analysen</a>
+                <a href="dokumentation.html">📁 Dokumentation</a>
+                <a href="forschung.html">🔬 Forschung</a>
+                <a href="publikationen.html">📚 Publikationen</a>
             </div>
         </div>
     </div>
 
     <header class="main-header">
-        <div class="header-container">
+        <div class="container header-container">
             <div class="logo">
                 <div class="logo-icon">RRN</div>
                 <div class="logo-text">
@@ -398,19 +40,20 @@
     </header>
 
     <nav class="nav-main">
-        <div class="nav-container">
+        <div class="container nav-container">
             <ul>
-                <li><a href="index.html">Startseite</a></li>
-                <li><a href="fussballtabelle.html" class="active">Fußballtabelle</a></li>
-                <li><a href="analysen.html">Analysen</a></li>
-                <li><a href="dokumentation.html">Dokumentation</a></li>
-                <li><a href="forschung.html">Forschung</a></li>
-                <li><a href="publikationen.html">Publikationen</a></li>
+                <li><a href="index.html">🏠 Startseite</a></li>
+                <li><a href="fussballtabelle.html" class="active">⚽ Fußballtabelle</a></li>
+                <li><a href="analysen.html">📊 Analysen</a></li>
+                <li><a href="dokumentation.html">📁 Dokumentation</a></li>
+                <li><a href="forschung.html">🔬 Forschung</a></li>
+                <li><a href="publikationen.html">📚 Publikationen</a></li>
             </ul>
         </div>
     </nav>
 
     <main class="main-content">
+        <div class="container">
         <article>
             <header class="article-header">
                 <div class="kicker">Semiotische Tiefenanalyse</div>
@@ -692,10 +335,11 @@
                 </p>
             </div>
         </article>
+        </div>
     </main>
 
     <footer class="footer">
-        <div class="footer-container">
+        <div class="container footer-container">
             <div class="footer-logo">
                 <div class="logo-icon">RRN</div>
                 <h2>Rechtsradikales Recherche Netzwerk</h2>
