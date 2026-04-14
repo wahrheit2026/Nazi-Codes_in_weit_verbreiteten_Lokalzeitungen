@@ -3,278 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Publikationen des RRN - Wissenschaftliche Veröffentlichungen und Dokumentationen">
+    <meta name="keywords" content="Publikationen, Veröffentlichungen, Dokumentationen, Rechtsextremismus">
+    <meta name="author" content="RRN - Rechtsradikales Recherche Netzwerk">
     <title>Publikationen – RRN Rechtsradikales Recherche Netzwerk</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-red: #E30613;
-            --primary-dark: #1a1a1a;
-            --primary-blue: #005596;
-            --text-primary: #1a1a1a;
-            --text-secondary: #666666;
-            --bg-light: #f5f5f5;
-            --border-color: #e0e0e0;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: 'Source Sans Pro', Arial, sans-serif;
-            color: var(--text-primary);
-            line-height: 1.6;
-            background-color: #ffffff;
-        }
-
-        .top-bar {
-            background-color: var(--primary-dark);
-            color: white;
-            padding: 8px 0;
-            font-size: 13px;
-        }
-
-        .top-bar-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .top-bar-links a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-            transition: color 0.2s;
-        }
-
-        .top-bar-links a:hover { color: var(--primary-red); }
-
-        .main-header {
-            border-bottom: 3px solid var(--primary-red);
-            background: white;
-        }
-
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .logo-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--primary-red);
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 900;
-            font-size: 22px;
-            font-family: 'Merriweather', serif;
-        }
-
-        .logo-text { font-family: 'Merriweather', serif; }
-
-        .logo-text h1 {
-            font-size: 28px;
-            font-weight: 900;
-            color: var(--primary-dark);
-            line-height: 1;
-        }
-
-        .logo-text span {
-            font-size: 12px;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .nav-main {
-            background: white;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .nav-main ul {
-            display: flex;
-            list-style: none;
-            gap: 0;
-        }
-
-        .nav-main li { position: relative; }
-
-        .nav-main a {
-            display: block;
-            padding: 15px 20px;
-            color: var(--text-primary);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 15px;
-            border-bottom: 3px solid transparent;
-            transition: all 0.2s;
-        }
-
-        .nav-main a:hover,
-        .nav-main a.active {
-            color: var(--primary-red);
-            border-bottom-color: var(--primary-red);
-        }
-
-        .main-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        .page-title {
-            font-family: 'Merriweather', serif;
-            font-size: 36px;
-            font-weight: 900;
-            margin-bottom: 15px;
-            color: var(--primary-dark);
-        }
-
-        .page-intro {
-            font-size: 18px;
-            color: var(--text-secondary);
-            margin-bottom: 40px;
-            max-width: 800px;
-        }
-
-        .pub-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 25px;
-        }
-
-        .pub-card {
-            background: white;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            padding: 25px;
-            transition: box-shadow 0.2s;
-        }
-
-        .pub-card:hover { box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-
-        .pub-card h3 {
-            font-family: 'Merriweather', serif;
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .pub-card h3 a {
-            color: var(--primary-blue);
-            text-decoration: none;
-        }
-
-        .pub-card h3 a:hover { color: var(--primary-red); }
-
-        .researcher-tag {
-            display: inline-block;
-            background: var(--bg-light);
-            color: var(--text-secondary);
-            font-size: 12px;
-            padding: 4px 10px;
-            border-radius: 3px;
-            margin-bottom: 12px;
-        }
-
-        .pub-card p {
-            font-size: 14px;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        .category-section { margin-bottom: 50px; }
-
-        .category-title {
-            font-family: 'Merriweather', serif;
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary-red);
-            margin-bottom: 25px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--border-color);
-        }
-
-        .footer {
-            background: var(--primary-dark);
-            color: white;
-            padding: 40px 0;
-            margin-top: 60px;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            text-align: center;
-        }
-
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .footer-logo .logo-icon {
-            background: white;
-            color: var(--primary-red);
-        }
-
-        .footer-logo h2 {
-            font-family: 'Merriweather', serif;
-            font-size: 22px;
-        }
-
-        .footer p {
-            color: #999;
-            font-size: 14px;
-        }
-
-        @media (max-width: 768px) {
-            .pub-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
 </head>
-<body>
+<body class="fade-in-up">
     <div class="top-bar">
-        <div class="top-bar-container">
-            <span>Recherche & Analyse von Rechtsextremismus</span>
+        <div class="container top-bar-container">
+            <span>🔍 Recherche & Analyse von Rechtsextremismus</span>
             <div class="top-bar-links">
-                <a href="fussballtabelle.html">Fußballtabelle</a>
-                <a href="analysen.html">Analysen</a>
-                <a href="dokumentation.html">Dokumentation</a>
-                <a href="forschung.html">Forschung</a>
-                <a href="publikationen.html">Publikationen</a>
+                <a href="fussballtabelle.html">⚽ Fußballtabelle</a>
+                <a href="analysen.html">📊 Analysen</a>
+                <a href="dokumentation.html">📁 Dokumentation</a>
+                <a href="forschung.html">🔬 Forschung</a>
+                <a href="publikationen.html">📚 Publikationen</a>
             </div>
         </div>
     </div>
 
     <header class="main-header">
-        <div class="header-container">
+        <div class="container header-container">
             <div class="logo">
                 <div class="logo-icon">RRN</div>
                 <div class="logo-text">
@@ -286,19 +40,20 @@
     </header>
 
     <nav class="nav-main">
-        <div class="nav-container">
+        <div class="container nav-container">
             <ul>
-                <li><a href="index.html">Startseite</a></li>
-                <li><a href="fussballtabelle.html">Fußballtabelle</a></li>
-                <li><a href="analysen.html">Analysen</a></li>
-                <li><a href="dokumentation.html">Dokumentation</a></li>
-                <li><a href="forschung.html">Forschung</a></li>
-                <li><a href="publikationen.html" class="active">Publikationen</a></li>
+                <li><a href="index.html">🏠 Startseite</a></li>
+                <li><a href="fussballtabelle.html">⚽ Fußballtabelle</a></li>
+                <li><a href="analysen.html">📊 Analysen</a></li>
+                <li><a href="dokumentation.html">📁 Dokumentation</a></li>
+                <li><a href="forschung.html">🔬 Forschung</a></li>
+                <li><a href="publikationen.html" class="active">📚 Publikationen</a></li>
             </ul>
         </div>
     </nav>
 
     <main class="main-content">
+        <div class="container">
         <h1 class="page-title">Publikationen & Fallstudien</h1>
         <p class="page-intro">
         Vollständige Fallstudien, Untersuchungsberichte und wissenschaftliche Arbeiten zu NWO-Strukturen, 
@@ -307,8 +62,8 @@
 
         <div class="category-section">
             <h2 class="category-title">KI-Influencer & Politische Manipulation</h2>
-            <div class="pub-grid">
-                <div class="pub-card">
+            <div class="analysis-grid">
+                <div class="analysis-card">
                     <span class="researcher-tag">mrbloxx</span>
                     <h3><a href="https://github.com/mrbloxx/Naomi_Seibt" target="_blank">Naomi_Seibt</a></h3>
                     <p>Umfassende Fallstudie über Naomi Seibt als GRU-generierte KI-Deepfake-Influencerin, die sogar Elon Musk täuschte.</p>
@@ -360,8 +115,8 @@
 
         <div class="category-section">
             <h2 class="category-title">Methoden & Operative Vorgehensweisen</h2>
-            <div class="pub-grid">
-                <div class="pub-card">
+            <div class="analysis-grid">
+                <div class="analysis-card">
                     <span class="researcher-tag">sigridfuhrenkamp-cyber</span>
                     <h3><a href="https://github.com/sigridfuhrenkamp-cyber/NWO-Cybermobbing-Gangstalking-Methode-Edeka-Fake-Aufkleber" target="_blank">NWO-Cybermobbing-Gangstalking-Methode-Edeka-Fake-Aufkleber</a></h3>
                     <p>Dokumentation der NWO-Sticker-Methode: Deepfakes privater Umfelder zur Einschüchterung.</p>
@@ -401,8 +156,8 @@
 
         <div class="category-section">
             <h2 class="category-title">Netzwerkanalysen & Verbindungen</h2>
-            <div class="pub-grid">
-                <div class="pub-card">
+            <div class="analysis-grid">
+                <div class="analysis-card">
                     <span class="researcher-tag">mrbloxx</span>
                     <h3><a href="https://github.com/mrbloxx/Gangstalking-Botnet-Music-Network-AfD" target="_blank">Gangstalking-Botnet-Music-Network-AfD</a></h3>
                     <p>Analyse des Zusammenhangs zwischen Gangstalking-Botnet, Musik-Netzwerk und AfD.</p>
@@ -454,8 +209,8 @@
 
         <div class="category-section">
             <h2 class="category-title">Staat & Verfassungsschutz</h2>
-            <div class="pub-grid">
-                <div class="pub-card">
+            <div class="analysis-grid">
+                <div class="analysis-card">
                     <span class="researcher-tag">cybermobbing-untersuchung</span>
                     <h3><a href="https://github.com/cybermobbing-untersuchung/Die-Beeinflussungskampagnen-die-angeblich-aus-Russland-kommen-aus-Deutschland" target="_blank">Die-Beeinflussungskampagnen-die-angeblich-aus-Russland-kommen-aus-Deutschland</a></h3>
                     <p>Enthüllung: Der deutsche Staat ist seit 2023 über die Terroristen-Aktivitäten im Bilde.</p>
@@ -492,16 +247,18 @@
                 </div>
             </div>
         </div>
+        </div>
     </main>
 
     <footer class="footer">
-        <div class="footer-container">
+        <div class="container footer-container">
             <div class="footer-logo">
                 <div class="logo-icon">RRN</div>
                 <h2>Rechtsradikales Recherche Netzwerk</h2>
             </div>
             <p>Wissenschaftliche Analyse & Dokumentation rechtsextremer Kommunikationsstrategien</p>
             <p style="margin-top: 10px;">&copy; 2026 RRN – Rechtsradikales Recherche Netzwerk</p>
+        </div>
         </div>
     </footer>
 </body>
